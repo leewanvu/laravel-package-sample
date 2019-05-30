@@ -16,7 +16,7 @@ class JustTest
     public function handle($request, Closure $next)
     {
         if ($request->is('test')) {
-            return redirect('home');
+            return "[JustTest Middleware]: You're accessing test page.";
         }
 
         return $next($request);
