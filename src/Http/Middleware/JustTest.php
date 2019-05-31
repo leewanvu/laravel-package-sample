@@ -15,7 +15,7 @@ class JustTest
      */
     public function handle($request, Closure $next)
     {
-        if ($request->is('test')) {
+        if ($request->is('test') && $request->has('is_middleware') && $request->get('is_middleware')) {
             return "[JustTest Middleware]: You're accessing test page.";
         }
 
